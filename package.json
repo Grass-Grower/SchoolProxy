@@ -1,5 +1,5 @@
 {
-  "name": "interstellar",
+  "name": "Hacker Hub",
   "version": "5.1.5",
   "type": "module",
   "engines": {
@@ -10,7 +10,7 @@
     "start": "node index.js",
     "format": "npx prettier . --write"
   },
-  "author": "InterstellarNetwork",
+  "author": "Cas Macino",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@tomphttp/bare-server-node": "2.0.3",
