@@ -1,5 +1,29 @@
 const iframe = document.getElementById('ifra')
-window.addEventListener('resize', navigator.keyboard.lock(['Escape']))
+
+if (navigator.userAgent.includes('Chrome')) {
+  window.addEventListener('resize', function () {
+    navigator.keyboard.lock(['Escape'])
+  })
+}
+
+// Iframe
+window.onload = function () {
+  let GoUrl = sessionStorage.getItem('GoUrl')
+  let dyValue = localStorage.getItem('dy')
+
+  if (!GoUrl.startsWith('/e/')) {
+    if (dyValue === 'true' || dyValue === 'auto') {
+      GoUrl = '/a/q/' + GoUrl
+    } else {
+      GoUrl = '/a/' + GoUrl
+    }
+  }
+  console.log(GoUrl)
+  if (iframe) {
+    iframe.src = GoUrl
+  }
+}
+
 // Decode URL
 function decodeXor(input) {
   if (!input) return input
@@ -114,29 +138,14 @@ function goForward() {
     console.error('No iframe found')
   }
 }
-// Iframe
-window.onload = function () {
-  let GoUrl = sessionStorage.getItem('GoUrl')
-  let dyValue = localStorage.getItem('dy')
-
-  if (!GoUrl.startsWith('/e/')) {
-    if (dyValue === 'true' || dyValue === 'auto') {
-      GoUrl = '/a/q/' + GoUrl
-    } else {
-      GoUrl = '/a/' + GoUrl
-    }
-  }
-  console.log(GoUrl)
-  if (iframe) {
-    iframe.src = GoUrl
-  }
-}
 
 // Remove Nav
 document.addEventListener('fullscreenchange', function () {
   const isFullscreen = Boolean(document.fullscreenElement)
   document.body.classList.toggle('fullscreen', isFullscreen)
 })
+
+/*
 // Now
 let decodedSet = false
 const decoded = localStorage.getItem('decoded')
@@ -195,4 +204,4 @@ function now() {
   } else {
     console.log('Decoded not found in localStorage.')
   }
-}
+} */
