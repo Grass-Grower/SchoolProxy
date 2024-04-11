@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 // Key
 document.addEventListener('DOMContentLoaded', function () {
   var eventKey = localStorage.getItem('eventKey') || '`'
-  var pLink = localStorage.getItem('pLink') || 'https://classroom.google.com/'
+  var pLink = localStorage.getItem('pLink') || 'https://start.hcps.org'
 
   document.addEventListener('keydown', function (event) {
     if (event.key === eventKey) {
