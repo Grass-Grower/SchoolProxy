@@ -53,6 +53,7 @@ body {
 }
 
 .main-search {
+  border-radius:20px;
   width: 50vw;
   height: 5vh;
   font-family: 'Poppins', sans-serif;
