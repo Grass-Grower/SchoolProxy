@@ -145,6 +145,7 @@ iframe {
   float: right;
   margin-top: 0em;
   color: #fff;
+  background-color: #666;
   height: 30px;
   border-radius: 5px;
 }
